@@ -13,6 +13,17 @@ for i in range(1,ndays)
     global n_new = length(ζ);
 end
 p1 = length(ages);
-print(p1)
+println(p1)
 
 # Part 2
+ages = split.(input, ',');
+ages = map(x -> parse(Int, x), ages);
+ndays = 256;
+bins = zeros(9); # Bins for ages 0 to 8
+map(x -> bins[x+1] += 1, ages); # Initialize the fish in each bin
+for i in range(1,ndays)
+    global bins = circshift(bins,-1);
+    global bins[7] = bins[7] + bins[end];
+end
+p2 = sum(bins);
+println(p2);
