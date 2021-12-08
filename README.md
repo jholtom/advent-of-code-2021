@@ -7,3 +7,4 @@
 - Day 5: Julia 
 - Day 6: Julia 
 - Day 7: Julia 
+- Day 8: Julia 
